@@ -1,0 +1,92 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Calles Mundiales de Buenos Aires | Experimento Data + Mapa USIG </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pablo H. Paladino @palamago - Pablo H. Paladino @abad">
+
+    <meta name="Title" content="Calles Mundiales de Buenos Aires" />
+    <meta name="og:title" content="Calles Mundiales de Buenos Aires" />
+    <meta name="description" content="Calles Mundiales de Buenos Aires" />
+    <meta name="og:description" content="Calles Mundiales de Buenos Aires" />
+    <meta name="og:image" content="http://arena.palamago.com.ar/poblacion/img/share.png" />
+    <link rel="image_src" href="http://arena.palamago.com.ar/poblacion/img/share.png" />
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18158765-6', 'palamago.com.ar');
+      ga('send', 'pageview');
+
+    </script>
+
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div id="main-container" class="row">
+        <div class="col-lg-12">
+          <h1>Mapa de calles Mundiales en Buenos Aires</h1>
+          <div id="miMapa"></div>
+        </div>
+      </div>
+
+      <div id="main-container" class="row">
+        <div class="col-lg-12">
+          <div data-bind="foreach: mundiales()">
+              <hr/>
+              <p data-bind="text: sede"></p>
+              <p data-bind="text: anio"></p>
+              <p data-bind="text: normalizada"></p>
+              <p data-bind="text: y"></p>
+              <p data-bind="text: x"></p>
+              <p data-bind="html: text"></p>
+              <p data-bind="html: barrio"></p>
+              <p data-bind="html: comuna"></p>
+              <img data-bind="attr:{src: map}" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p class="text-center">
+          Programación: <a href="http://twitter.com/palamago" target="_blank">@palamago</a> | Diseño: <a href="http://twitter.com/abad" target="_blank">@abad</a>
+        </p>
+        <p class="text-center">
+          Construído con información del BLA
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <a target="_blank" href="https://github.com/palamago/calles-mundiales-buenos-aires"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/knockout-2.3.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://servicios.usig.buenosaires.gob.ar/nd-js/1.4/normalizadorDirecciones.min.js" type="text/javascript"></script>
+    <script src="http://servicios.usig.buenosaires.gob.ar/usig-js/3.0/usig.MapaEstatico.min.js" type="text/javascript"></script>
+    <script src="http://servicios.usig.buenosaires.gov.ar/usig-js/3.0/usig.MapaInteractivo.min.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,41 @@
+
+html,body{
+	height: 100%;
+}
+
+body {
+	background: #232a2d;
+	color:#FFF;
+}
+
+h1 {
+	text-align: center;
+}
+h2 {
+	font-weight: bold;
+	margin: 0;
+	color:#a3c725;
+	text-shadow:0 1px 1px rgba(0,0,0,0.3);
+}
+
+hr {
+	border-top: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+p,small {
+	color:#606d72!important;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+	text-transform: uppercase;
+	font-size: 11px;font-weight: bold;
+	margin:0;
+}
+
+small {
+	text-transform: none;
+}
+
+#miMapa {
+	height: 400px;
+}
+
