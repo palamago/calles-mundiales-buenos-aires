@@ -88,6 +88,15 @@ var CallesMundiales;
                     return '';
                 }
             }, e);
+            e.linkToMap = ko.computed(function() {
+                if(this.x()&&this.y()){
+                    CallesMundiales.addMarkerToMap(this);
+                    return 'http://mapa.buenosaires.gob.ar/?lat='+this.y()+'&lon='+this.x()+'&zl=7&map=default&ver=2&dir=2111%3A1970::0&modo=marker-menu';
+                } else {
+                    return '';
+                }
+            }, e);
+            e.loading = ko.observable(true);
 
             CallesMundiales.bindings.mundiales.push(e);
         });
@@ -95,7 +104,7 @@ var CallesMundiales;
 
     CallesMundiales.addMarkerToMap = function(d){
         var iconUrl = 'http://www.piedrabuenanoticias.com.ar/portal/images/MAYO%202012/ball.png',
-            iconSize = new OpenLayers.Size(41, 41),
+            iconSize = new OpenLayers.Size(25, 25),
             customMarker = new OpenLayers.Marker(new OpenLayers.LonLat(d.x(),d.y()),new OpenLayers.Icon(iconUrl, iconSize));
         
         var contentHTML = d.normalizada();
@@ -120,28 +129,33 @@ var CallesMundiales;
                 $.getJSON(url_geocoder+'cod_calle='+opts.match.getCalle().codigo+'&altura='+opts.match.getAltura(), function(d){
                     e.x(d.x);
                     e.y(d.y);
+                    e.loading(false);
                 });
 
                 $.getJSON(url_datos+'calle='+norm[0].getCalle()+'&altura='+opts.match.getAltura(), function(d){
                     e.barrio(d.barrio);
-                    e.comuna(d.comuna);
+                    e.comuna(d.comuna.split(' ')[1]);
+                    e.loading(false);
                 });
 
-                e.text('Este mundial tiene su dirección en las calles de Buenos Aires.');
+                e.text('Este mundial tiene su dirección en las calles de Buenos Aires. =)');
 
             } catch (error) {
                 e.normalizada('No pudo determinarse una dirección.');
                 e.text(error.getErrorMessage());
                 if(!error.getMatchings){
                     $.getJSON(url_otros+'texto='+e.sede, function(d){
-                        var html = 'NO PUDO HALLARSE NINGUNA CALLE EXISTENTE QUE COINCIDIERA CON SU BÚSQUEDA.<br/>Pero se encontraron algunos lugares con ese nombre:';
+                        var html = 'No se ubicó ninguna calle, pero se encontraron algunos sitios de interés con ese nombre:';
                         html += '<ul>';
                         $.each(d.instancias,function(ix,l){
                             html += '<li>'+l.nombre+' - '+l.clase+'</li>';
                         });
                         html += '</ul>';
                         e.text(html);
+                        e.loading(false);
                     });
+                } else {
+                    e.loading(false);
                 }
             }
         });
@@ -151,5 +165,22 @@ var CallesMundiales;
 })(window, document,jQuery,ko);
 
 window.onload = function() {
-    //CallesMundiales.init(); 
+    var opts = {
+        fb:{
+            title:'Mapa de calles Mundiales en Buenos Aires',
+            text:'Pequeño experimento geográfico-mundialista',
+            img: ''
+        },
+        tw:{
+            text:'Mapa de calles Mundiales en Buenos Aires',
+            related : 'palamago',
+            via: 'palamago',
+            ht: 'brasil2014,mundial2014,worldcup,brazil2014'
+        },
+        shortener:{
+            enabled:false
+        }
+    };
+
+    MiniShare.init(opts); 
 }

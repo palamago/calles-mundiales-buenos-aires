@@ -1,4 +1,4 @@
-
+/*
 html,body{
 	height: 100%;
 }
@@ -33,9 +33,29 @@ p,small {
 
 small {
 	text-transform: none;
-}
+}*/
 
 #miMapa {
 	height: 400px;
+	margin-top: 50px;
 }
 
+.badge {
+	width: auto !important;
+	font-weight: bold !important;
+	font-size: 15px !important;
+}
+
+.tile {
+	cursor: default !important;
+}
+
+.panel-content i {
+	width: 20px;
+	text-align: center;
+}
+
+footer {
+	margin-top: 30px;
+	height: 50px;
+}
