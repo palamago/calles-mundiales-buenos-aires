@@ -7,6 +7,10 @@ Here is an silly experiment just for fun and learn.
 
 Every World Cup venue as a street, every year as a address.
 
+Uruguay 1930
+...
+Brasil 2014
+
 Mini experiment using World Cup data with Buenos Aires Usig API. There is a blog post related [HERE](http://blog.palamago.com.ar/2014/02/calles-mundiales-de-buenos-aires)
 
 Using:
