@@ -103,7 +103,7 @@ var CallesMundiales;
     };
 
     CallesMundiales.addMarkerToMap = function(d){
-        var iconUrl = 'http://www.piedrabuenanoticias.com.ar/portal/images/MAYO%202012/ball.png',
+        var iconUrl = 'img/ball.png',
             iconSize = new OpenLayers.Size(25, 25),
             customMarker = new OpenLayers.Marker(new OpenLayers.LonLat(d.x(),d.y()),new OpenLayers.Icon(iconUrl, iconSize));
         
@@ -168,8 +168,8 @@ window.onload = function() {
     var opts = {
         fb:{
             title:'Mapa de calles Mundiales en Buenos Aires',
-            text:'Pequeño experimento geográfico-mundialista',
-            img: ''
+            text:'Pequeño experimento geográfico-mundialista con las calles de Buenos Aires.',
+            img: 'http://arena.palamago.com.ar/calles-mundiales/img/share.png'
         },
         tw:{
             text:'Mapa de calles Mundiales en Buenos Aires',

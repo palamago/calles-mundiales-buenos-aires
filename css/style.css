@@ -57,5 +57,14 @@ small {
 
 footer {
 	margin-top: 30px;
-	height: 50px;
+	height: 120px;
+}
+
+.share-links img {
+	width: 40px;
+	height: 40px;
+}
+
+.share-links .share-label {
+	margin-top: 9px;
 }

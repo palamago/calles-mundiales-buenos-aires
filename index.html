@@ -9,10 +9,10 @@
 
     <meta name="Title" content="Mapa de calles Mundiales en Buenos Aires" />
     <meta name="og:title" content="Mapa de calles Mundiales en Buenos Aires" />
-    <meta name="description" content="Mapa de calles Mundiales en Buenos Aires" />
-    <meta name="og:description" content="Mapa de calles Mundiales en Buenos Aires" />
-    <meta name="og:image" content="http://arena.palamago.com.ar/mundiales-ba/img/share.png" />
-    <link rel="image_src" href="http://arena.palamago.com.ar/mundiales-ba/img/share.png" />
+    <meta name="description" content="Pequeño experimento geográfico-mundialista con las calles de Buenos Aires." />
+    <meta name="og:description" content="Pequeño experimento geográfico-mundialista con las calles de Buenos Aires." />
+    <meta name="og:image" content="http://arena.palamago.com.ar/calles-mundiales/img/share.png" />
+    <link rel="image_src" href="http://arena.palamago.com.ar/calles-mundiales/img/share.png" />
 
     <!-- CSS -->
     <link href="css/metro-bootstrap.min.css" rel="stylesheet">
@@ -50,19 +50,13 @@
             <div class="clearfix">
                 <h1>Mapa de calles Mundiales en Buenos Aires</h1>
                 <h2>Pequeño experimento utilizando los servicios de USIG del Gobierno de la Ciudad para geolocalizar direcciones que corresponden a las sedes y años de los mundiales.</h2>
+                <h2>Más información en este <a target="_blank" href="http://blog.palamago.com.ar/2014/02/calles-mundiales-de-buenos-aires">blog post</a>.</h2>
             </div>
       </header>
 
-      <div class="row">
-        <div class="share-links">
-          <a class="minishare-gp minishare" href="javascript:;">g</a>
-          <a class="minishare-tw minishare" href="javascript:;">t</a>
-          <a class="minishare-fb minishare" href="javascript:;">f</a>
-          <p class="share-text">Compartí tus resultados</p>
-        </div>
-      </div>
-      
-      <a href="#"><span class="tile-group-title fg-cobalt">RESULTADOS <span class="icon-arrow-right-5"></span></span></a>
+      <hr/>
+
+      <a href="javascript:;"><span class="tile-group-title fg-cobalt">RESULTADOS <span class="icon-arrow-right-5"></span></span></a>
 
       <div data-bind="foreach: mundiales()">
         <div class="row">
@@ -82,7 +76,7 @@
               <div class="tile-content">
                 <div class="panel">
                   <div class="panel-header bg-orange fg-white">
-                      Resultado:
+                      Resultado
                   </div>
                   <div class="panel-content">
                     <p><i class="icon-location-3 fg-orange on-right on-left"></i><span data-bind="text: normalizada"></span></p>
@@ -92,7 +86,7 @@
                 <!-- ko if: map -->
                 <div class="panel">
                   <div class="panel-header bg-orange fg-white">
-                      Datos del lugar:
+                      Datos del lugar
                   </div>
                   <div class="panel-content">
                     <p><i class="icon-target fg-orange on-right on-left"></i>Barrio: <span data-bind="text: barrio"></span></p>
@@ -131,12 +125,60 @@
         </div>
       </div>
 
+      <hr/>
+
       <div class="row">
         <a href="#"><span class="tile-group-title fg-cobalt">MAPA <span class="icon-arrow-right-5"></span></span></a>
+        <p>A continuación ubicamos en el mapa, los mundiales que tienen su correspondiente dirección existente en Buenos Aires: </p>
         <div>
           <div id="miMapa"></div>
         </div>
       </div>
+
+      <hr/>
+
+      <div class="row">
+        <div class="col-lg-12 tile-group clearfix">
+            <div class="tile quadro ol-transparent">
+                <div class="tile-content">
+                  <div class="brand">
+                      <span class="badge bg-orange"><i class="icon-share-2 fg-white"></i></span>
+                  </div>
+                  <div class="panel">
+                    <div class="panel-header bg-orange fg-white">
+                    </div>
+                    <div class="panel-content fg-black">
+                        ¿Te pareció interesante?<br/>
+                        Compartí este experimento con tus amigos <i class="icon-arrow-right-5 on-right on-left"></i>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="tile ol-transparent bg-lightBlue">
+              <a class="minishare-tw minishare" href="javascript:;">
+                <div class="tile-content icon">
+                    <span class="icon-twitter"></span>
+                </div>
+              </a>  
+            </div>
+            <div class="tile ol-transparent bg-darkBlue">
+                <a class="minishare-fb minishare" href="javascript:;">
+                  <div class="tile-content icon">
+                      <span class="icon-facebook"></span>
+                  </div>
+                </a>
+            </div>
+            <div class="tile bg-red ol-transparent">
+                <a class="minishare-gp minishare" href="javascript:;">
+                  <div class="tile-content icon">
+                      <span class="icon-google-plus"></span>
+                  </div>
+                </a>
+            </div>
+        </div>
+      </div>
+
+      <hr/>
 
       <footer>
           <div class="bottom-menu-wrapper">
@@ -146,7 +188,11 @@
                   <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
                   <li><a href="http://knockoutjs.com/" target="_blank">knockout.js</a></li>
                   <li><a href="http://metroui.org.ua/" target="_blank">Metro UI CSS</a></li>
-                  
+              </ul>
+                <ul class="horizontal-menu compact">
+                  <li><span class="tile-group-title fg-cobalt">CÓDIGO FUENTE <span class="icon-arrow-right-5"></span></span><a href="https://github.com/palamago/calles-mundiales-buenos-aires" target="_blank">github</a></li>
+                  <li><span class="tile-group-title fg-cobalt">POST RELACIONADO <span class="icon-arrow-right-5"></span></span><a href="http://blog.palamago.com.ar/2014/02/calles-mundiales-de-buenos-aires" target="_blank">Blog de Palamago</a></li>
+                  <li><span class="tile-group-title fg-cobalt">IMÁGENES <span class="icon-arrow-right-5"></span></span><a href="http://www.fifa.com/" target="_blank">Copyright FIFA</a></li>
               </ul>
           </div>
       </footer>
