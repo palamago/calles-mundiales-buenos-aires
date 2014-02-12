@@ -12,7 +12,7 @@ var MiniShare;
     MiniShare.$mailButton = $('.minishare-mail');
 
     MiniShare.getCurrentLocation = function(type){
-        return window.location.origin;
+        return window.location.href;
     }
 
     MiniShare.options = {

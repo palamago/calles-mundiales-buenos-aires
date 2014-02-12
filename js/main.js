@@ -47,7 +47,8 @@ var CallesMundiales;
         {anio:2002, sede:"Japon"},
         {anio:2006, sede:"Alemania"},
         {anio:2010, sede:"Sudáfrica"},
-        {anio:2014, sede:"Brasil"}
+        {anio:2014, sede:"Brasil"},
+        {anio:2018, sede:"Rusia"}
     ];
 
     CallesMundiales.$downBtn = $('#arrow-down');
